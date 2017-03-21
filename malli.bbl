@@ -1,0 +1,104 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {bandara2011machine}
+\btxnamefont {\btxlastnamefont {Bandara}, Upul} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Wijayarathna}, Gamini}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {A machine learning based tool for source code plagiarism
+  detection}{A machine learning based tool for source code plagiarism
+  detection}}.
+\newblock \btxjournalfont {International Journal of Machine Learning and
+  Computing}, 1(4):337, 2011.
+
+\bibitem {caliskan2015anonymizing}
+\btxnamefont {\btxlastnamefont {Caliskan-Islam}, Aylin}, \btxnamefont
+  {\btxlastnamefont {Harang}, Richard}, \btxnamefont {\btxlastnamefont {Liu},
+  Andrew}, \btxnamefont {\btxlastnamefont {Narayanan}, Arvind}, \btxnamefont
+  {\btxlastnamefont {Voss}, Clare}, \btxnamefont {\btxlastnamefont {Yamaguchi},
+  Fabian}\btxandcomma {} \btxandlong {}\ \btxnamefont {\btxlastnamefont
+  {Greenstadt}, Rachel}\btxauthorcolon\ \btxtitlefont {\btxifchangecase
+  {De-anonymizing programmers via code stylometry}{De-anonymizing programmers
+  via code stylometry}}.
+\newblock \Btxinlong {}\ \btxtitlefont {24th USENIX Security Symposium (USENIX
+  Security), Washington, DC}, 2015.
+
+\bibitem {Elenbogen:2008:DOS:1295109.1295123}
+\btxnamefont {\btxlastnamefont {Elenbogen}, Bruce\btxfnamespacelong S.}
+  \btxandlong {}\ \btxnamefont {\btxlastnamefont {Seliya},
+  Naeem}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {Detecting outsourced
+  student programming assignments}{Detecting Outsourced Student Programming
+  Assignments}}.
+\newblock \btxjournalfont {J. Comput. Sci. Coll.}, 23(3):50--57,
+  \btxprintmonthyear{.}{1}{2008}{long}\ifbtxprintISSN {,
+  \mbox{\btxISSN~\btxISSNfont {1937-4771}}}.
+\newblock {\latintext
+  \btxurlfont{http://dl.acm.org/citation.cfm?id=1295109.1295123}}.
+
+\bibitem {jadalla2008pde4java}
+\btxnamefont {\btxlastnamefont {Jadalla}, Ameera} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Elnagar}, Ashraf}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Pde4java: Plagiarism detection engine for java source
+  code: a clustering approach}{PDE4Java: Plagiarism Detection Engine for Java
+  source code: a clustering approach}}.
+\newblock \btxjournalfont {International Journal of Business Intelligence and
+  Data Mining}, 3(2):121--135, 2008.
+
+\bibitem {kothari2007probabilistic}
+\btxnamefont {\btxlastnamefont {Kothari}, Jay}, \btxnamefont {\btxlastnamefont
+  {Shevertalov}, Maxim}, \btxnamefont {\btxlastnamefont {Stehle},
+  Edward}\btxandcomma {} \btxandlong {}\ \btxnamefont {\btxlastnamefont
+  {Mancoridis}, Spiros}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {A
+  probabilistic approach to source code authorship identification}{A
+  probabilistic approach to source code authorship identification}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Information Technology, 2007. ITNG'07.
+  Fourth International Conference on}, \btxpageslong {}\ 243--248. IEEE, 2007.
+
+\bibitem {lange2007using}
+\btxnamefont {\btxlastnamefont {Lange}, Robert\btxfnamespacelong Charles}
+  \btxandlong {}\ \btxnamefont {\btxlastnamefont {Mancoridis},
+  Spiros}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Using code metric
+  histograms and genetic algorithms to perform author identification for
+  software forensics}{Using code metric histograms and genetic algorithms to
+  perform author identification for software forensics}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Proceedings of the 9th annual
+  conference on Genetic and evolutionary computation}, \btxpageslong {}\
+  2082--2089. ACM, 2007.
+
+\bibitem {rosenblum2011wrote}
+\btxnamefont {\btxlastnamefont {Rosenblum}, Nathan}, \btxnamefont
+  {\btxlastnamefont {Zhu}, Xiaojin}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {\btxlastnamefont {Miller}, Barton\btxfnamespacelong P}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Who wrote this code? identifying the authors
+  of program binaries}{Who wrote this code? identifying the authors of program
+  binaries}}.
+\newblock \Btxinlong {}\ \btxtitlefont {European Symposium on Research in
+  Computer Security}, \btxpageslong {}\ 172--189. Springer, 2011.
+
+\bibitem {Son:2013:APS:2508269.2508323}
+\btxnamefont {\btxlastnamefont {Son}, Jeong\btxfnamespacelong Woo},
+  \btxnamefont {\btxlastnamefont {Noh}, Tae\btxfnamespacelong Gil},
+  \btxnamefont {\btxlastnamefont {Song}, Hyun\btxfnamespacelong Je}\btxandcomma
+  {} \btxandlong {}\ \btxnamefont {\btxlastnamefont {Park},
+  Seong\btxfnamespacelong Bae}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {An application for plagiarized source code detection based on a parse tree
+  kernel}{An Application for Plagiarized Source Code Detection Based on a Parse
+  Tree Kernel}}.
+\newblock \btxjournalfont {Eng. Appl. Artif. Intell.}, 26(8):1911--1918,
+  \btxprintmonthyear{.}{9}{2013}{long}\ifbtxprintISSN {,
+  \mbox{\btxISSN~\btxISSNfont {0952-1976}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1016/j.engappai.2013.06.007}}.
+
+\end{thebibliography}
