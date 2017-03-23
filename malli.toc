@@ -5,12 +5,11 @@
 \contentsline {section}{\numberline {3}Results}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Data}{4}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Methodologies}{5}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Feature extractions}{5}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Similarity detection}{5}{subsection.3.4}
-\contentsline {section}{\numberline {4}Analysis}{5}{section.4}
-\contentsline {section}{\numberline {5}Discussion}{5}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{5}{section.6}
-\contentsline {section}{References}{5}{section*.2}
+\contentsline {subsection}{\numberline {3.3}Feature extractions}{7}{subsection.3.3}
+\contentsline {section}{\numberline {4}Analysis}{7}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{7}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}
+\contentsline {section}{References}{7}{section*.2}
 \select@language {english}
 \select@language {english}
 \select@language {english}

@@ -33,6 +33,7 @@
 \usepackage{microtype}
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
+\usepackage{longtable}
 %\usepackage[bottom]{footmisc}
 
 % Automatically set the PDF metadata fields
@@ -187,7 +188,7 @@ The collected papers seems to divide into two different categories: pure stylist
 
 \subsection{Data}
 
-The data sets used and their sizes in previous studies vary a little bit; source codes from college students, synthetic data sets, codes collected from open source projects and codes from open competitions e.g. \textit{Google Codejam}.  Most variance comes from the number of possible authors and the numbers of used source codes, but it doesn't seem to matter data-wise is the method structural or style based. The findings related to data set sizes are summed into following table, where \textit{size} refers to the total amount of files used. 
+The data sets used and their sizes in previous studies vary a little bit; source codes from coureses, synthetic data sets, codes collected from open source projects and codes from open competitions e.g. \textit{Google Codejam}.  Most of the variance comes from the number of possible authors and the number of used source codes, but based on collected papers, one can't say does it matter if the method structural or style based. The findings related to data set sizes are summed into following table, where \textit{size} refers to the total amount of files used, and \textit{authors} as the total number of authors reported in data set. 
 
 \begin{table}[ht]
 \centering
@@ -201,19 +202,72 @@ The data sets used and their sizes in previous studies vary a little bit; source
 \end{table}
 
 \noindent
-In table \ref{table:data}, values are chosen only if they are explicitly told in the paper. If there have been multiple values or data sets, data set size have been selected as the one with student-related data, which are data sets collected from the courses. In three studies explicit values are not told and that is why they are marked as \textit{N/A}. For example in the study of Caliskan-Islam \textit{et al.}, their data set was collected from Google Codejam which explains their large amount of programmers\cite{caliskan2015anonymizing}. However they didn't explicitly tell how many source code files there were in total, but rather mentioned that there were around one to 17 code files per a contestant.
+In table \ref{table:data}, values are chosen only if they are explicitly told in the paper. If there have been multiple values or data sets, data set size have been selected as the one with student-related data, which is often data collected from various courses. In three studies explicit values are not told and that is why they are marked as \textit{N/A}. For example in the study of Caliskan-Islam \textit{et al.} \cite{caliskan2015anonymizing}, their data set was collected from Google Codejam which explains their large amount of programmers. However they didn't explicitly tell how many source code files there were in total, but rather mentioned that there were around one to 17 code files per a contestant. In two other cases number of explicit authors remained untold and all the missing valued papers were from structural analysis. 
 
 \subsection{Methodologies}
 
-In this section, methodologies of collected studies are reviewed. Many style-related studies have similar methods, but their machine learning techniques or gathered feature sets differ. In structural-related, their methodologies can be very different but almost always utilizing the gained information from abstract syntax tree. 
+In this section, methodologies of collected studies are summarized, but features and feature extraction is left out for the next section. Methodology is viewed here as the common concept in machine learning which is usually characterized by choosing the machine learning method e.g. \textit{logistic regression}, for classification. It seems that from gathered papers, many style-related studies seems have similar features, but their machine learning techniques differ in some sense. In structural-related, their methodologies can be very different but often utilizing the gained information from the abstract syntax tree. Also data mining seems to be used and tree-related algorithms in structural studies.  
+
+The overview from these used techniques can be summarized into following table.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|cccccccc}
+\textbf{Attr./Paper} & \cite{bandara2011machine}   & \cite{kothari2007probabilistic}   & \cite{Elenbogen:2008:DOS:1295109.1295123}  & \cite{lange2007using}    & \cite{Son:2013:APS:2508269.2508323}   & \cite{caliskan2015anonymizing}    & \cite{jadalla2008pde4java}   & \cite{rosenblum2011wrote}   \\ \hline
+\textbf{Method}        & $E_3$ & NB/VFI & DT & GA & PTK & RF  & DM & K-M/SVM \\
+\end{tabular}
+\caption{Methods used in papers. Abbreviations are listed on below.}
+\label{table:meth}
+\end{table}
+
+\begin{longtable}{ll}
+
+{$\mathbf{E_i}$} & Direct ensemble of i models \\
+\textbf{NB} & Naive Bayes\\
+\textbf{VFI} & Voting Feature Interval\\
+\textbf{DT} & Decision Tree\\
+\textbf{GA} & Genetic Algorithm\\
+\textbf{PTK} & Parse Tree Kernel\\
+\textbf{RF} & Random Forest\footnote{Could also classified as ensemble method but for clarity it's separated here}\\
+\textbf{DM} & Data Mining (DBSCAN)\footnote{Paper describing DBSCAN \url{http://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf}}\\
+\textbf{K-M} & K-means Clustering\\
+\textbf{SVM} & Support Vector Machine
+
+\end{longtable}
+
+\noindent
+%\cite{bandara2011machine} uses combination of KNN and Naive Bayes and Ada\\
+%\cite{kothari2007probabilistic} uses Bayes and Voting Feature Interval\\
+%\cite{Elenbogen:2008:DOS:1295109.1295123} uses Decision Tree model\\
+%\cite{lange2007using} uses genetic algorithm\\
+%\cite{Son:2013:APS:2508269.2508323} uses parse tree kernel\\
+%\cite{caliskan2015anonymizing} uses random forest\\
+%\cite{jadalla2008pde4java} uses data mining\\
+%\cite{rosenblum2011wrote} uses clustering (k-means) and support vector machine
+\noindent
+The only ensemble method from table \ref{table:meth} is used in \cite{bandara2011machine} and it consists of k-nearest neighbors, Naive Bayes and Ada boosting algorithm. Authors say that they use Ada because it improves the accuracy of their model, and it helps to deal with weak learning algorithms. Kothari \textit{et al.} in \cite{kothari2007probabilistic} are comparing side to side Naive Bayes and Voting Feature Interval. It was measured that VFI provided better results from open source projects and Naive Bayes from student based source codes. Another study that used two various algorithms for prediction is by Rosenblum \textit{et al.} in \cite{rosenblum2011wrote}. They used SVM for authorship identification and k-means to group stylistically similar programs together. Authorship identification was used for finding the most likely author based on source codes stylistic features. This model was then utilized when the clustering was done to group the most similar source codes together. Clustering method is also studied in \cite{jadalla2008pde4java} where Jadalla and Elnagar present their plagiarism detection system \textit{PDE4Java}. Their clustering method is a density based clustering (\textit{DBSCAN}) which is controllable by two different variables: minimum number of clustering forming points and radius around a centroid. 
+
+Other classification algorithms used in papers are decision trees and genetic algorithm. Trees are used for structural-based classification in \cite{Son:2013:APS:2508269.2508323, caliskan2015anonymizing} and for stylistic-based in \cite{Elenbogen:2008:DOS:1295109.1295123}. Structural-based studies utilize heavily the syntax tree as first parsing the code and then using the syntax tree to form similarity measures that will distinguish source codes from each others. This is because syntax tree and tree-based models are both tree-like structures, so it's natural to take advantage of this property. However, parse tree kernel and random forests differ from each others as parse tree kernel is used to calculate pair-wise similarities between source codes, random-forest is used to train multiple decision trees, which have to be first trained in order to make predictions. This viewpoint differs a lot from parse tree kernel that utilizes just the similarity matrix and is not so predictive-based solution. In stylistic-study decision tree is utilized, according to the authors, because it allows a direct view to the final model that allows to see how various features affects to it. 
+
+Genetic algorithm is only used in study of Lange and Mancoridis in \cite{lange2007using}, and it's the oldest study together with the study by Kothari \textit{et al.} in \cite{kothari2007probabilistic} from the year 2007. Genetic algorithm differs a lot from other methods because rather than a direct predictive model based on statistics e.g. Naive Bayes, it is utilized first to form the best feature combinations and then to classify the data. As a fitness function, they used the correctly classified documents i.e the precision to reward the algorithm.
+
+It can be seen from studies that their methods divide roughly into four different categories: probabilistic models, tree-learners, clustering-based models and evolutionary algorithm. Interestingly studies that utilize the information about the source code structure use either clustering or tree-based methods, as in style-based methods there are more variance in the model selection. It is also notable that especially studies that utilize clustering are 
+
 
 \subsection{Feature extractions}
 
-\subsection{Similarity detection}
+The actual features differs the most and it's also the most important properties of a model creation. The division of papers into style and structural, reflects especially into the features. Considering both. 
+
+Similarity measures is a related and important thing especially used in clustering. Tell methods and differences. 
+
+
+%\subsection{Similarity detection}
 
 
 \section{Analysis}
-Reflection
+Reflection to the use of machine learning methods to detect plagiarism in course.
+
+
 \section{Discussion}
 
 Main points/main ideas. Limitations
