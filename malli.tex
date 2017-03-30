@@ -205,7 +205,7 @@ The data sets used and their sizes in previous studies vary a little bit; source
 In table \ref{table:data}, values are chosen only if they are explicitly told in the paper. If there have been multiple values or data sets, data set size have been selected as the one with student-related data, which is often data collected from various courses. In three studies explicit values are not told and that is why they are marked as \textit{N/A}. For example in the study of Caliskan-Islam \textit{et al.} \cite{caliskan2015anonymizing}, their data set was collected from Google Codejam which explains their large amount of programmers. However they didn't explicitly tell how many source code files there were in total, but rather mentioned that there were around one to 17 code files per a contestant. In two other cases number of explicit authors remained untold and all the missing valued papers were from structural analysis. 
 
 \subsection{Methodologies}
-
+\label{chap:meth}
 In this section, methodologies of collected studies are summarized, but features and feature extraction is left out for the next section. Methodology is viewed here as the common concept in machine learning which is usually characterized by choosing the machine learning method e.g. \textit{logistic regression}, for classification. It seems that from gathered papers, many style-related studies seems have similar features, but their machine learning techniques differ in some sense. In structural-related, their methodologies can be very different but often utilizing the gained information from the abstract syntax tree. Also data mining seems to be used and tree-related algorithms in structural studies.  
 
 The overview from these used techniques can be summarized into following table.
@@ -251,30 +251,42 @@ Other classification algorithms used in papers are decision trees and genetic al
 
 Genetic algorithm is only used in study of Lange and Mancoridis in \cite{lange2007using}, and it's the oldest study together with the study by Kothari \textit{et al.} in \cite{kothari2007probabilistic} from the year 2007. Genetic algorithm differs a lot from other methods because rather than a direct predictive model based on statistics e.g. Naive Bayes, it is utilized first to form the best feature combinations and then to classify the data. As a fitness function, they used the correctly classified documents i.e the precision to reward the algorithm.
 
-It can be seen from studies that their methods divide roughly into four different categories: probabilistic models, tree-learners, clustering-based models and evolutionary algorithm. Interestingly studies that utilize the information about the source code structure use either clustering or tree-based methods, as in style-based methods there are more variance in the model selection. It is also notable that especially studies that utilize clustering are 
+It can be seen from studies that their methods divide roughly into four different categories: probabilistic models, tree-learners, clustering-based models and evolutionary algorithm. Interestingly studies that utilize the information about the source code structure use either clustering or tree-based methods, as in style-based methods there are more variance in the model selection. %It is also notable that especially studies that utilize clustering are 
 
 
 \subsection{Feature extractions}
 
-The actual features differs the most and it's also the most important properties of a model creation. The division of papers into style and structural, reflects especially into the features. Considering both. 
+To gain even more intuitive mental image of the used machine learning related methods,  feature extraction methods needs to be inspected from the papers, as this is also the topic that differs papers from each others. In this context, feature extraction is considered as the method to change the source code document into vector of either continuous and/or discrete numbers that will represent the original document. In the case of supervised learning problems where documents are labeled by authors, this representation can be formalized usually into following equation $\mathbf{X} = (x_1, x_2,...,x_n, y)$. In this equation \textbf{X} represents the source code, \emph{x} is the individual feature used and \emph{y} is the output variable which is from the plagiarism perspective, usually the author of the document. Also, it has been shown in this paper that machine learning methods used to find plagiarism in source codes divide into two main categories: stylistic and structural studies. This division is next utilized with the findings from the \autoref{chap:meth} to inspect feature extraction from various viewpoints. List of combined usage of metrics is given at the end of this chapter.
 
-Similarity measures is a related and important thing especially used in clustering. Tell methods and differences. 
+\paragraph{Stylistic features}
+Usages of stylistic features are easily found in \cite{bandara2011machine}, where Bandara \textit{et al.} count nine different metrics that they used. Some of these metrics are gained by parsing the source code with ANTLR\footnote{More information about ANTLR parser at \url{http://www.antlr.org/}} parser generator but most of them can be gained directly from the code. Bandera \textit{et al.} represent the original source code as a set of tokens as e.g.  number of characters per line, number of words in document and relative frequency of access modifiers\footnote{Access modifiers in Java are \emph{public}, \emph{protected} and \emph{final}} used.  The frequencies of those nine tokens are then calculated and these metrics are directly used as an input for the learning algorithm. 
+
+The similar approach but from the pure probabilistic perspective is given in \cite{kothari2007probabilistic}. Kothari \textit{et al.} use 
+
+
+\paragraph{Structural features}
+
+%TODO: The actual features differs the most and it's also the most important properties of a model creation. The division of papers into style and structural, reflects especially into the features. Considering both. 
+
+%Similarity measures is a related and important thing especially used in clustering. Tell methods and differences.
+
+%Explain stylistic features e.g. number of references etc.  
 
 
 %\subsection{Similarity detection}
 
 
 \section{Analysis}
-Reflection to the use of machine learning methods to detect plagiarism in course.
+TODO: Reflection to the use of machine learning methods to detect plagiarism in programming course.
 
 
 \section{Discussion}
 
-Main points/main ideas. Limitations
+TODO: Main points/main ideas. Limitations
 
 \section{Conclusion}
 
-Sum up findings.
+TODO: Sum up findings.
 
 
 % --- References ---
