@@ -7,11 +7,11 @@
 \contentsline {subsection}{\numberline {3.2}Methodologies}{5}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Feature extractions}{7}{subsection.3.3}
 \contentsline {paragraph}{Stylistic features}{7}{section*.2}
-\contentsline {paragraph}{Structural features}{7}{section*.3}
-\contentsline {section}{\numberline {4}Analysis}{7}{section.4}
-\contentsline {section}{\numberline {5}Discussion}{8}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}
-\contentsline {section}{References}{8}{section*.4}
+\contentsline {paragraph}{Structural features}{8}{section*.3}
+\contentsline {section}{\numberline {4}Analysis}{9}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{9}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}
+\contentsline {section}{References}{9}{section*.4}
 \select@language {english}
 \select@language {english}
 \select@language {english}
