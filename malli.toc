@@ -8,10 +8,10 @@
 \contentsline {subsection}{\numberline {3.3}Feature extractions}{7}{subsection.3.3}
 \contentsline {paragraph}{Stylistic features}{7}{section*.2}
 \contentsline {paragraph}{Structural features}{8}{section*.3}
-\contentsline {section}{\numberline {4}Analysis}{9}{section.4}
-\contentsline {section}{\numberline {5}Discussion}{9}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}
-\contentsline {section}{References}{9}{section*.4}
+\contentsline {section}{\numberline {4}Analysis}{10}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{10}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}
+\contentsline {section}{References}{10}{section*.4}
 \select@language {english}
 \select@language {english}
 \select@language {english}
