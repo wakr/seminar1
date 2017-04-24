@@ -26,6 +26,7 @@
 \usepackage{textpos}
 \usepackage{xspace}
 \usepackage{array}
+\usepackage{longtable}
 
 \graphicspath{{./fig/}}
 
@@ -207,18 +208,15 @@ tree kernel}, 2013
 	\begin{itemize}
 		\item Studies divide into two categories
 		\begin{itemize}
-			\item Attribute counting
-			\item Structure based
+			\item Attribute counting (4 papers)
+			\item Structure based (4 papers)
 		\end{itemize}
+		\item Attribute counting is easy and fast $\rightarrow$ directly from the source code
+		\item Structure based require parsing
 		\item Model accuracies are reported in two ways
 		\begin{itemize}
 			\item Traditional classification accuracy
 			\item How close the model was to human labeling
-		\end{itemize}
-		\item Accuracies ranged from 69\% to over 90\%
-		\begin{itemize}
-			\item Highest used mixture of stylistic and structural approach
-			\item E.g. 93\% same results compared to human validator
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -226,6 +224,11 @@ tree kernel}, 2013
 \begin{frame}
 	\vspace{0.5in}
 	\begin{itemize}
+		\item Accuracies ranged from 69\% to over 90\%
+		\begin{itemize}
+			\item Highest used mixture of stylistic and structural approach
+			\item E.g. 93\% same results compared to human validator
+		\end{itemize}
 		\item Plagiarism detection is close to authorship identification
 			\begin{itemize}
 			\item Classifying anonymous source code
@@ -237,7 +240,102 @@ tree kernel}, 2013
 \end{frame}
 
 \subsection{Data}
+
+\begin{frame}
+	\begin{itemize}
+		\frametitle{Data sets in studies}
+		\item No clear difference between stylistic studies and structural studies
+		\begin{itemize}
+			\item Partially reported data sets
+			\item Just few authors in stylistic studies
+		\end{itemize}
+	\end{itemize}
+
+\begin{table}[ht]
+\centering
+\scalebox{0.8}{
+\begin{tabular}{c|cccccccc}
+\textbf{Attr./Paper} & 1   & 5   & 3  & 6    & 8   & 2    & 4   & 7   \\ \hline
+\textbf{Size}        & 741 & 200 & 83 & 4068 & 555 & N/A  & 326 & 203 \\
+\textbf{Authors}     & 10  & 8   & 12 & 20   & N/A & 1600 & N/A & 32\\ 
+\textbf{Structural} &No&No&No&No&Yes&Yes&Yes&Yes
+\end{tabular}
+}
+\caption{Reported data sets used in papers}
+\label{table:data}
+\end{table}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item Data sets are often collected from course assignments
+		\item Open source projects are utilized to gather the data set
+		\item Competitions
+		\begin{itemize}
+			\item \textit{Google Code Jam}
+			\item Explains the large number of possible authors
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
 \subsection{Methodologies}
+
+\begin{frame}
+	\frametitle{Machine learning methods}
+	
+\begin{table}[ht]
+\centering
+\scalebox{0.7}{
+\begin{tabular}{c|cccccccc}
+\textbf{Attr./Paper} & 1   & 5   & 3  & 6    & 8   & 2    & 4   & 7   \\ \hline
+\textbf{Method}        & $E_3$ & NB/VFI & DT & GA & PTK & RF  & DM & K-M/SVM \\
+\textbf{Structural} &No&No&No&No&Yes&Yes&Yes&Yes
+\end{tabular}
+}
+\caption{Methods used in studies}
+\label{table:meth}
+\end{table}	
+
+\begin{footnotesize}
+\begin{longtable}{ll}
+
+{$\mathbf{E_i}$} & Ensemble of i models \\
+\textbf{NB} & Naive Bayes\\
+\textbf{VFI} & Voting Feature Interval\\
+\textbf{DT} & Decision Tree\\
+\textbf{GA} & Genetic Algorithm\\
+\textbf{PTK} & Parse Tree Kernel\\
+\textbf{RF} & Random Forest\\
+\textbf{DM} & Data Mining (DBSCAN)\\
+\textbf{K-M} & K-means Clustering\\
+\textbf{SVM} & Support Vector Machine
+
+\end{longtable}
+\end{footnotesize}
+
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+	\item Many various algorithms used
+	\begin{itemize}
+		\item Probabilistic 
+		\item Trees
+		\item Genetic algorithm
+		\item Clustering
+	\end{itemize}
+	\item Structural studies tend to favor tree-structures and clustering
+	\item More variance in stylistic studies 
+	\begin{itemize}
+		\item Probabilistic models
+		\item Genetic algorithm
+		\item Decision tree
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
 \subsection{Feature extraction}
 
 \section{Discussion}
