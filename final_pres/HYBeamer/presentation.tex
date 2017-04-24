@@ -1,0 +1,93 @@
+% rubber: module pdftex
+% rubber: path HY
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Usage HOWTO                                           %
+%  -----------                                           %
+%  * Compilation:          rubber presentation           %
+%  * Cleaning:             rubber --clean presentation   %
+%  * Force recompilation:  rubber --force presentation   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[t,12pt,pdftex]{beamer}
+\usepackage{helvet}
+\usepackage{times}
+\usepackage{courier}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+\usepackage{textpos}
+\usepackage{xspace}
+\usepackage{array}
+
+\graphicspath{{./fig/}}
+
+% theme options: hy/ml/hum, rovio/sinetti, hiit
+% default: hy,rovio
+
+%\usetheme[hy]{HY}
+%\usetheme[hy,sinetti]{HY}
+%\usetheme[hum,rovio]{HY}
+%\usetheme[ml,rovio]{HY}
+\usetheme[ml,rovio,hiit]{HY}
+
+
+\title{The Title of Presentation}
+%\author{Name Name \scriptsize \guilsinglleft{}name.name@helsinki.fi\guilsinglright{}}
+\author{Author1, Author2}
+\institute{University of Helsinki\\Department of Computer Science}
+\date{December 21, 2012}
+
+\begin{document}
+
+%\selectlanguage{english}
+
+\HyTitle
+
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+\section{Introduction}
+
+\begin{frame}
+	\frametitle{One slide}
+	
+	\begin{itemize}
+		\item one point
+		\item another point
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Another slide}
+	
+	asdf
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}
+	\frametitle{Yet another slide}
+	
+	content
+\end{frame}
+
+\end{document}

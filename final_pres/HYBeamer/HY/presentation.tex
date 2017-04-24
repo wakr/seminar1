@@ -1,0 +1,251 @@
+% rubber: module pdftex
+% rubber: path HY
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Usage HOWTO                                           %
+%  -----------                                           %
+%  * Compilation:          rubber presentation           %
+%  * Cleaning:             rubber --clean presentation   %
+%  * Force recompilation:  rubber --force presentation   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[t,12pt,pdftex]{beamer}
+\usepackage{helvet}
+\usepackage{times}
+\usepackage{courier}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{url}
+\usepackage{textpos}
+\usepackage{xspace}
+\usepackage{array}
+
+\graphicspath{{./fig/}}
+
+% theme options: hy/ml/hum, rovio/sinetti, hiit
+% default: hy,rovio
+
+%\usetheme[hy]{HY}
+%\usetheme[hy,sinetti]{HY}
+%\usetheme[hum,rovio]{HY}
+\usetheme[ml,rovio]{HY}
+%\usetheme[ml,rovio,hiit]{HY}
+
+
+\title{Tools for plagiarism detection}
+%\author{Name Name \scriptsize \guilsinglleft{}name.name@helsinki.fi\guilsinglright{}}
+\author{Kristian Wahlroos}
+\institute{University of Helsinki\\Department of Computer Science}
+\date{\today}
+
+\begin{document}
+
+%\selectlanguage{english}
+
+\HyTitle
+
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+\section{Introduction}
+
+\subsection{Problem}
+
+\begin{frame}
+	\frametitle{Introduction}
+	
+	\begin{itemize}
+		\item MOOC's have gained popularity in recent years
+		\begin{itemize}
+			\item Especially programming related MOOC's\footnote{\url{http://blog.edx.org/10-most-popular-courses-edx-courses-in-2016}}
+			\item Independent assignments
+			\item No live-presence required
+		\end{itemize}
+		\item Number of students often large
+		\item Trust is thus usually one-sided
+		\begin{itemize}
+			\item Belief that students do tasks by themselves
+			\item Not actively monitored
+			\item Cheating is in form of plagiarism
+			\item Many potential plagiarism scenarios
+		\end{itemize} 
+	\end{itemize}
+\end{frame}
+
+\subsection{Plagiarism}
+
+
+\begin{frame}
+	\vspace{1in}
+	\begin{itemize}
+			\item Source code plagiarism is a problem consisting many forms
+		\begin{itemize}
+			\item Straight plagiarism
+			\item Too intense group work 
+			\item Code sharing
+			\item Obfuscation
+		\end{itemize}
+		\item Lots of students $\rightarrow$ impossible to detect manually in reasonable time
+		\begin{itemize}
+			\item Lot of data available
+			\item Need for automated tools
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Motivation}
+
+\begin{frame}
+	\frametitle{In this study}
+	\begin{itemize}
+		\item Finding a suitable machine learning tool set for detecting source code plagiarism
+		\item Motivated by
+		\begin{itemize}
+			\item Could be used in University of Helsinki's course \textit{Introduction to programming}
+			\item Interesting topic
+			\item Machine learning methods benefit from a lot of data
+		\end{itemize}
+		\item Results reflected to the usage in a academic course
+	\end{itemize}
+\end{frame}
+
+
+
+
+\section{Methodology}
+\subsection{Literature review}
+
+
+\begin{frame}
+	\frametitle{Methodology}
+	\begin{itemize}
+		\item Performing literature review with \textit{Google Scholar}
+		\item Collected 8 papers 
+		\item Two-step search process
+		\begin{itemize}
+			\item Limit by overall keywords occurrences
+			\item Limit by title/abstract/keywords
+		\end{itemize}
+		\item Keywords
+		\begin{itemize}
+			\item Direct matches: \textbf{machine learning, plagiarism, code, programming}
+			\item Non-direct: \textbf{authorship, identification} 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{1in}
+	\begin{itemize}
+		\item Limited years starting from 2006
+		\begin{itemize}
+			\item Believed to contain more recent programming languages
+			\item MOOC's are relatively new concept
+			\item Machine learning methods have changed
+		\end{itemize}
+		\item Doing comparison between papers
+		\begin{itemize}
+			\item Model accuracy
+			\item Data
+			\item Machine learning methodology
+			\item Feature extraction
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Results}
+\subsection{Overview}
+\begin{frame}
+	\frametitle{Results}
+	\begin{itemize}
+		\item 8 papers from 2007 to 2015
+		\begin{itemize}
+			\item[1)] \textit{A machine learning based tool
+for source code plagiarism detection}, 2011
+			\item[2)] \textit{De-anonymizing
+programmers via code stylometry}, 2015
+			\item[3)] \textit{Detecting outsourced student
+programming assignments}, 2008
+			\item[4)] \textit{Pde4java: Plagiarism detection
+engine for java source code: a clustering approach}, 2008
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+	\item[5)] \textit{A probabilistic approach to source code authorship identification}, 2007
+			\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
+			\item[7)] \textit{Who wrote
+this code? identifying the authors of program binaries}, 2011
+			\item[8)] \textit{An application for plagiarized source code detection based on a parse
+tree kernel}, 2013
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item Studies divide into two categories
+		\begin{itemize}
+			\item Attribute counting
+			\item Structure based
+		\end{itemize}
+		\item Model accuracies are reported in two ways
+		\begin{itemize}
+			\item Traditional classification accuracy
+			\item How close the model was to human labeling
+		\end{itemize}
+		\item Accuracies ranged from 69\% to over 90\%
+		\begin{itemize}
+			\item Highest used mixture of stylistic and structural approach
+			\item E.g. 93\% same results compared to human validator
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item Plagiarism detection is close to authorship identification
+			\begin{itemize}
+			\item Classifying anonymous source code
+			\item Clustering similar documents together
+			\item Finding stylistic nuances
+			\item Trying to capture the logical structure
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Data}
+\subsection{Methodologies}
+\subsection{Feature extraction}
+
+\section{Discussion}
+
+\begin{frame}
+	\frametitle{Yet another slide}
+	
+	content
+\end{frame}
+
+\end{document}

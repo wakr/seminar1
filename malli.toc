@@ -10,9 +10,7 @@
 \contentsline {paragraph}{Structural features}{8}{section*.3}
 \contentsline {section}{\numberline {4}Analysis}{10}{section.4}
 \contentsline {section}{\numberline {5}Discussion}{10}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}
-\contentsline {section}{References}{10}{section*.4}
-\select@language {english}
-\select@language {english}
+\contentsline {section}{\numberline {6}Conclusion}{11}{section.6}
+\contentsline {section}{References}{11}{section*.4}
 \select@language {english}
 \select@language {english}
