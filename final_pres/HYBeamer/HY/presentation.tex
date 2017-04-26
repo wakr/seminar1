@@ -40,7 +40,7 @@
 %\usetheme[ml,rovio,hiit]{HY}
 
 
-\title{Tools for plagiarism detection}
+\title{Automated tools for source code plagiarism detection}
 %\author{Name Name \scriptsize \guilsinglleft{}name.name@helsinki.fi\guilsinglright{}}
 \author{Kristian Wahlroos}
 \institute{University of Helsinki\\Department of Computer Science}
@@ -197,7 +197,7 @@ engine for java source code: a clustering approach}, 2008
 	\item[5)] \textit{A probabilistic approach to source code authorship identification}, 2007
 			\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
 			\item[7)] \textit{Who wrote
-this code? identifying the authors of program binaries}, 2011
+this code? Identifying the authors of program binaries}, 2011
 			\item[8)] \textit{An application for plagiarized source code detection based on a parse
 tree kernel}, 2013
 	\end{itemize}
@@ -327,6 +327,11 @@ tree kernel}, 2013
 		\item Clustering
 	\end{itemize}
 	\item Structural studies tend to favor tree-structures and clustering
+	\begin{itemize}
+		\item Easy due to nature of code structure
+		\item Overcomes the obfuscation
+		\item Pre-parsing often required
+	\end{itemize}
 	\item More variance in stylistic studies 
 	\begin{itemize}
 		\item Probabilistic models
@@ -338,12 +343,240 @@ tree kernel}, 2013
 
 \subsection{Feature extraction}
 
+\begin{frame}
+	\frametitle{Features}
+	\begin{itemize}
+		\item \textit{How source code is transformed to feature vector?}
+		\item {\textit{How similarity is being measured?}}
+		\item Inspected from two viewpoints
+		\begin{itemize}
+			\item Attribute counting (stylistic)
+			\item Structural
+		\end{itemize}
+		\item Most stylistic studies extract the features directly from the source code
+		\item Structural studies tend to parse the document and use abstract syntax tree as a base for features
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Features - stylistic}
+	\begin{itemize}
+		\item[1)] \textit{A machine learning based tool
+for source code plagiarism detection}, 2011
+		\begin{itemize}
+			\item Code as set of tokens
+			\item Parsing with ANTLR-parser
+			\item 9 different metrics
+			\begin{itemize}
+				\item Number of characters per line
+				\item Number of words in document
+				\item Number of access modifiers	
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[5)] \textit{A probabilistic approach to source code authorship identification}, 2007
+		\begin{itemize}
+			\item Three step pipeline
+			\begin{itemize}
+				\item[I)] Extract metrics
+				\item[II)] Filter metrics
+				\item[III)] Form writer profiles
+			\end{itemize}
+			\item Style and pattern based metrics
+			\begin{itemize}
+				\item Style consists line sizes, leading spaces and commas as distributions
+				\item Pattern based is distribution of possible N-grams
+			\end{itemize}
+			\item 4 was considered as the best length in N-gram
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[3)] \textit{Detecting outsourced student
+programming assignments}, 2008
+		\begin{itemize}
+			\item Programmer profiles (writer profiles)
+			\item Utilizing \textit{Weka} to parse documents
+			\item Six metrics
+			\begin{itemize}
+				\item zipped size
+				\item lines of code
+				\item number of variables
+				\item number of for-loops
+				\item number of comments
+				\item variable lengths
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
+		\begin{itemize}
+			\item 18 base metrics 
+			\item Gathered metric values are transformed into distributions
+			\item Text-based and syntactic metrics
+			\item Genetic algorithm to find the best combination
+			\begin{itemize}
+				\item usage of curly braces
+				\item comment amount and style
+				\item indentation
+				\item inline spaces
+				\item length of lines
+				\item switch-cases
+				\item control flows (if-else)
+				\item frequencies of first characters in variables
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Features - structural}
+	\begin{itemize}
+		\item[8)] \textit{An application for plagiarized source code detection based on a parse
+tree kernel}, 2013
+	\begin{itemize}
+		\item Parse tree kernel
+		\begin{itemize}
+			\item Produces similarities between source codes
+			\item Tree kernels are used often in linguistics
+		\end{itemize}
+		\item Similarity matrix to group source codes 
+		\item Utilizing heavily the tree structure
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[ht]
+			\centering
+			\includegraphics[scale=0.3]{parse_tree}	
+			\caption{Example of parse tree in study 8}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[2)] \textit{De-anonymizing
+programmers via code stylometry}, 2015
+		\begin{itemize}
+			\item Building \textit{Code Stylometry Feature Set}
+			\item Utilizing abstract syntax tree (AST)
+			\item 3 classes of features used
+			\begin{itemize}
+				\item Lexical (number of functions/keywords)
+				\item Layout (indentation, whitespace)
+				\item Syntactic (maximum depth of AST, AST bigrams)
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[4)] \textit{Pde4java: Plagiarism detection
+engine for java source code: a clustering approach}, 2008
+		\begin{itemize}
+			\item Source code into n-grams via tokenization
+			\item 4-grams 
+			\item Similarity measure by \textit{Jaccard coefficient}
+			\begin{itemize}
+				\item In simplified form: ratio of specific n-gram between two documents
+			\end{itemize}
+			\item Similarity is used to group documents into clusters
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{0.5in}
+	\begin{itemize}
+		\item[7)] \textit{Who wrote
+this code? Identifying the authors of program binaries}, 2011
+		\begin{itemize}
+			\item Graphs and N-grams as features
+			\item Binary code first into machine language
+			\item Flow graphs
+			\begin{itemize}
+				\item Idioms: short instruction sequences
+				\item Graphlets: local structure of the program
+				\item Supergraphlets: combine graphlets and simplify
+				\item Call graphlets: interaction between external libraries
+			\end{itemize}
+			\item N-grams size of 4-bytes is used
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
 \section{Discussion}
 
 \begin{frame}
-	\frametitle{Yet another slide}
-	
-	content
+	\frametitle{Recap}
+	\begin{itemize}
+		\item Two distinctions between studies: stylistic and structural
+		\begin{itemize}
+			\item Stylistic is can be gained directly from the source code
+			\item Structure deals with tree-like data
+		\end{itemize}
+		\item Data is quite easily obtainable
+		\begin{itemize}
+			\item Open-source projects
+			\item Competitions
+			\item Courses inside universities
+		\end{itemize}
+		\item It all comes down to author identification
+		\begin{itemize}
+			\item \textit{Who wrote this code?}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Criticism}
+	\begin{itemize}
+		\item Some papers are not reporting explicitly the data and author counts
+		\item No justification/comparing between different machine learning models
+		\item Detection model is rarely put into real life test
+		\begin{itemize}
+			\item No proof of the actual (real-life) performance
+			\item Plagiarism accusation is difficult topic
+			\item What to do if task is very limited
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reflection - \textit{Introduction to Programming}}
+	\begin{itemize}
+		\item Six weeks of assignments 1 machine test		
+		\item Based on study 2
+		\begin{itemize}
+			\item 3 classes of features: lexical, stylistic and syntactic
+			\item Classifying 250 programmers should give good quite accurate results	
+		\end{itemize}
+		\item Training the model (programmer profiles) for six weeks
+		\item Testing against unseen data $\rightarrow$ machine test	 		\item If model would alarm, requires manual step
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\vspace{1.5in}
+	Thank you
 \end{frame}
 
 \end{document}
