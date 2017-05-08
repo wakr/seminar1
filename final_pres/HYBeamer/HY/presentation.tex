@@ -104,7 +104,7 @@
 			\item Code sharing
 			\item Obfuscation
 		\end{itemize}
-		\item Lots of students $\rightarrow$ impossible to detect manually in reasonable time
+		\item Lots of students $\rightarrow$ impossible to detect plagiarism manually in reasonable time
 		\begin{itemize}
 			\item Lot of data available
 			\item Need for automated tools
@@ -118,7 +118,7 @@
 	\frametitle{In this study}
 	\begin{itemize}
 		\item Finding a suitable machine learning tool set for detecting source code plagiarism
-		\item Motivated by
+		\item Motivation
 		\begin{itemize}
 			\item Could be used in University of Helsinki's course \textit{Introduction to programming}
 			\item Interesting topic
@@ -138,7 +138,7 @@
 \begin{frame}
 	\frametitle{Methodology}
 	\begin{itemize}
-		\item Performing literature review with \textit{Google Scholar}
+		\item Literature review using \textit{Google Scholar}
 		\item Collected 8 papers 
 		\item Two-step search process
 		\begin{itemize}
@@ -162,11 +162,11 @@
 			\item MOOC's are relatively new concept
 			\item Machine learning methods have changed
 		\end{itemize}
-		\item Doing comparison between papers
+		\item Comparison between papers
 		\begin{itemize}
 			\item Model accuracy
 			\item Data
-			\item Machine learning methodology
+			\item Machine learning model
 			\item Feature extraction
 		\end{itemize}
 	\end{itemize}
@@ -179,13 +179,13 @@
 	\begin{itemize}
 		\item 8 papers from 2007 to 2015
 		\begin{itemize}
-			\item[1)] \textit{A machine learning based tool
+			\item[1)] Bandara and Wijayarathna, \textbf{A machine learning based tool
 for source code plagiarism detection}, 2011
-			\item[2)] \textit{De-anonymizing
+			\item[2)] Caliskan-Islam et al, \textbf{De-anonymizing
 programmers via code stylometry}, 2015
-			\item[3)] \textit{Detecting outsourced student
+			\item[3)] Elenbogen and Seliya, \textbf{Detecting outsourced student
 programming assignments}, 2008
-			\item[4)] \textit{Pde4java: Plagiarism detection
+			\item[4)] Jadalla and Elnagar, \textbf{Pde4java: Plagiarism detection
 engine for java source code: a clustering approach}, 2008
 		\end{itemize}
 	\end{itemize}
@@ -194,11 +194,11 @@ engine for java source code: a clustering approach}, 2008
 \begin{frame}
 	\vspace{0.5in}
 	\begin{itemize}
-	\item[5)] \textit{A probabilistic approach to source code authorship identification}, 2007
-			\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
-			\item[7)] \textit{Who wrote
+	\item[5)] Kothari et al, \textbf{A probabilistic approach to source code authorship identification}, 2007
+			\item[6)] Lange and Mancoridis, \textbf{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
+			\item[7)] Rosenblum et al, \textbf{Who wrote
 this code? Identifying the authors of program binaries}, 2011
-			\item[8)] \textit{An application for plagiarized source code detection based on a parse
+			\item[8)] Son et al, \textbf{An application for plagiarized source code detection based on a parse
 tree kernel}, 2013
 	\end{itemize}
 \end{frame}
@@ -231,7 +231,7 @@ tree kernel}, 2013
 		\end{itemize}
 		\item Plagiarism detection is close to authorship identification
 			\begin{itemize}
-			\item Classifying anonymous source code
+			\item Classifying anonymous text
 			\item Clustering similar documents together
 			\item Finding stylistic nuances
 			\item Trying to capture the logical structure
@@ -247,7 +247,7 @@ tree kernel}, 2013
 		\item No clear difference between stylistic studies and structural studies
 		\begin{itemize}
 			\item Partially reported data sets
-			\item Just few authors in stylistic studies
+			\item Author amount smaller in stylistic studies
 		\end{itemize}
 	\end{itemize}
 
@@ -271,6 +271,7 @@ tree kernel}, 2013
 	\begin{itemize}
 		\item Data sets are often collected from course assignments
 		\item Open source projects are utilized to gather the data set
+		\item Use of synthetic data sets
 		\item Competitions
 		\begin{itemize}
 			\item \textit{Google Code Jam}
@@ -362,7 +363,7 @@ tree kernel}, 2013
 	\frametitle{Features - stylistic}
 	\begin{itemize}
 		\item[1)] \textit{A machine learning based tool
-for source code plagiarism detection}, 2011
+for source code plagiarism detection}
 		\begin{itemize}
 			\item Code as set of tokens
 			\item Parsing with ANTLR-parser
@@ -379,7 +380,7 @@ for source code plagiarism detection}, 2011
 \begin{frame}
 	\vspace{0.5in}
 	\begin{itemize}
-		\item[5)] \textit{A probabilistic approach to source code authorship identification}, 2007
+		\item[5)] \textit{A probabilistic approach to source code authorship identification}
 		\begin{itemize}
 			\item Three step pipeline
 			\begin{itemize}
@@ -401,7 +402,7 @@ for source code plagiarism detection}, 2011
 	\vspace{0.5in}
 	\begin{itemize}
 		\item[3)] \textit{Detecting outsourced student
-programming assignments}, 2008
+programming assignments}
 		\begin{itemize}
 			\item Programmer profiles (writer profiles)
 			\item Utilizing \textit{Weka} to parse documents
@@ -421,7 +422,7 @@ programming assignments}, 2008
 \begin{frame}
 	\vspace{0.5in}
 	\begin{itemize}
-		\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}, 2007
+		\item[6)] \textit{Using code metric histograms and genetic algorithms to perform author identification for software forensics}
 		\begin{itemize}
 			\item 18 base metrics 
 			\item Gathered metric values are transformed into distributions
@@ -446,7 +447,7 @@ programming assignments}, 2008
 	\frametitle{Features - structural}
 	\begin{itemize}
 		\item[8)] \textit{An application for plagiarized source code detection based on a parse
-tree kernel}, 2013
+tree kernel}
 	\begin{itemize}
 		\item Parse tree kernel
 		\begin{itemize}
@@ -471,7 +472,7 @@ tree kernel}, 2013
 	\vspace{0.5in}
 	\begin{itemize}
 		\item[2)] \textit{De-anonymizing
-programmers via code stylometry}, 2015
+programmers via code stylometry}
 		\begin{itemize}
 			\item Building \textit{Code Stylometry Feature Set}
 			\item Utilizing abstract syntax tree (AST)
@@ -489,7 +490,7 @@ programmers via code stylometry}, 2015
 	\vspace{0.5in}
 	\begin{itemize}
 		\item[4)] \textit{Pde4java: Plagiarism detection
-engine for java source code: a clustering approach}, 2008
+engine for java source code: a clustering approach}
 		\begin{itemize}
 			\item Source code into n-grams via tokenization
 			\item 4-grams 
@@ -506,7 +507,7 @@ engine for java source code: a clustering approach}, 2008
 	\vspace{0.5in}
 	\begin{itemize}
 		\item[7)] \textit{Who wrote
-this code? Identifying the authors of program binaries}, 2011
+this code? Identifying the authors of program binaries}
 		\begin{itemize}
 			\item Graphs and N-grams as features
 			\item Binary code first into machine language
@@ -547,7 +548,7 @@ this code? Identifying the authors of program binaries}, 2011
 \end{frame}
 
 \begin{frame}
-	\frametitle{Criticism}
+	\frametitle{Problems}
 	\begin{itemize}
 		\item Some papers are not reporting explicitly the data and author counts
 		\item No justification/comparing between different machine learning models
@@ -557,6 +558,12 @@ this code? Identifying the authors of program binaries}, 2011
 			\item Plagiarism accusation is difficult topic
 			\item What to do if task is very limited
 		\end{itemize}
+		\item When style can be captured?
+		\begin{itemize}
+			\item Auto-indentation
+			\item Linters
+		\end{itemize}
+		\item Number of classes can be large
 	\end{itemize}
 \end{frame}
 
@@ -570,7 +577,7 @@ this code? Identifying the authors of program binaries}, 2011
 			\item Classifying 250 programmers should give good quite accurate results	
 		\end{itemize}
 		\item Training the model (programmer profiles) for six weeks
-		\item Testing against unseen data $\rightarrow$ machine test	 		\item If model would alarm, requires manual step
+		\item Testing against unseen data $\rightarrow$ machine test	 		\item Model alarms $\rightarrow$ manual inspection of the case
 	\end{itemize}
 \end{frame}
 
